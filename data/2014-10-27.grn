@@ -1,0 +1,53 @@
+table_create Blog1 TABLE_HASH_KEY ShortText
+column_create Blog1 message COLUMN_SCALAR ShortText
+column_create Blog1 title COLUMN_SCALAR ShortText
+
+table_create GeoIndex TABLE_PAT_KEY WGS84GeoPoint
+
+table_create IndexBlog1 TABLE_PAT_KEY ShortText --default_tokenizer TokenBigram --normalizer NormalizerAuto
+
+table_create Site TABLE_HASH_KEY ShortText
+column_create Site location COLUMN_SCALAR WGS84GeoPoint
+column_create Site title COLUMN_SCALAR ShortText
+
+table_create SiteCountry TABLE_HASH_KEY ShortText
+
+table_create SiteDomain TABLE_HASH_KEY ShortText
+
+table_create Tag TABLE_HASH_KEY ShortText
+
+table_create Terms TABLE_PAT_KEY ShortText --default_tokenizer TokenBigram --normalizer NormalizerAuto
+
+table_create ToyBox TABLE_HASH_KEY ShortText
+column_create ToyBox is_animal COLUMN_SCALAR Bool
+column_create ToyBox location COLUMN_SCALAR WGS84GeoPoint
+column_create ToyBox name COLUMN_SCALAR ShortText
+column_create ToyBox price COLUMN_SCALAR Int8
+column_create ToyBox time COLUMN_SCALAR Time
+column_create ToyBox weight COLUMN_SCALAR Float
+
+table_create User TABLE_HASH_KEY ShortText
+column_create User username COLUMN_SCALAR ShortText
+
+table_create Video TABLE_HASH_KEY UInt32
+column_create Video title COLUMN_SCALAR ShortText
+
+column_create Site country COLUMN_SCALAR SiteCountry
+column_create Site domain COLUMN_SCALAR SiteDomain
+column_create Site link COLUMN_SCALAR Site
+column_create Site links COLUMN_VECTOR Site
+
+column_create User friends COLUMN_VECTOR User
+
+column_create Video tags COLUMN_VECTOR Tag
+
+column_create GeoIndex index_point COLUMN_INDEX Site location
+
+column_create IndexBlog1 index_message COLUMN_INDEX|WITH_POSITION Blog1 message
+column_create IndexBlog1 index_title COLUMN_INDEX|WITH_POSITION Blog1 title
+
+column_create Tag index_tags COLUMN_INDEX Video tags
+
+column_create Terms blog_title COLUMN_INDEX|WITH_POSITION Site title
+
+column_create User index_friends COLUMN_INDEX User friends
