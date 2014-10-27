@@ -5,9 +5,9 @@
 ## 現在共有している情報
 
   * 次はどこから読むか
-    * [4.6.2. 参照関係の逆引き](http://groonga.org/ja/docs/tutorial/index.html#reverse-resolution-of-reference-relationships)
+    * [4.7.2. インデックス名を指定した全文検索](http://groonga.org/ja/docs/tutorial/match_columns.html#full-text-search-with-specific-index-name)
   * 次回、再開するためにデータベースに読み込むデータ
-    * [data/2014-08-25.grn](data/2014-08-25.grn)
+    * [data/2014-10-27.grn](data/2014-10-27.grn)
 
 ## ライセンス
 
@@ -15,6 +15,7 @@
 
 ## 過去のGroongaドキュメント読書会
 
+  * [Groongaドキュメント読書会5](http://groonga.doorkeeper.jp/events/16395) - 2014-10-27（月） 19:30-21:30
   * [Groongaドキュメント読書会4](http://groonga.doorkeeper.jp/events/14275) - 2014-08-25（月） 19:30-21:30
   * [Groongaドキュメント読書会3](http://groonga.doorkeeper.jp/events/13039) - 2014-07-23（水） 20:00-22:00
   * [Groongaドキュメント読書会2](http://groonga.doorkeeper.jp/events/11834) - 2014-06-03（火） 20:00-22:00
